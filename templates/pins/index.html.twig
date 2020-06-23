@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pinsterest-clone</title>
+</head>
+<body>
+	<h1>All Pins</h1>
+
+	<a href="{{ path('app_pins_create')}}">Create Pins</a>
+
+	{% if pins|length > 0 %}
+		{% for pin in pins %}
+			<article>
+				<h1>{{ pin.getTitle() }}</h1>
+				<p>{{ pin.getDescription() }}</p>
+			</article>
+		{% endfor %}
+	{% else %}
+		<p>Sorry, no pins yet!</p>
+	{% endif %}
+
+</body>
+</html>
